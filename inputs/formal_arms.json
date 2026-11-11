@@ -1,0 +1,33 @@
+{
+ "format": "ccversions-arms-spec-v1",
+ "name": "registered-run-20261111",
+ "note": "The groups of the registered run. Every group asks the same 78 items. 'first' is one of the first two passes, 'third' is the third pass, opened only by the rule in the design file.",
+ "groups": [
+  {"group": "main", "versions": "all", "mode": "stock_blocked", "effort": "high", "remote_flags": "off",
+   "repeats": {"first": 1, "third": 1},
+   "note": "The comparison itself: every version, its own system prompt and tool descriptions, every tool call refused before it runs, remote flags not fetched."},
+  {"group": "flags_on", "versions": ["2.1.280", "2.1.299", "2.1.308", "2.1.322"], "mode": "stock_blocked",
+   "effort": "high", "remote_flags": "on", "config_set": "fon", "repeats": {"first": 1},
+   "note": "The same ask with today's remote flags fetched, on four versions."},
+  {"group": "author", "versions": ["2.1.280", "2.1.322"], "mode": "author", "effort": "high",
+   "remote_flags": "off", "config_set": "fsm", "output_format": "stream-json", "repeats": {"first": 1},
+   "note": "The LiveNerf author's harness: his two sentences replace the system prompt, no tools."},
+  {"group": "notools", "versions": ["2.1.280", "2.1.322"], "mode": "stock_notools", "effort": "high",
+   "remote_flags": "off", "config_set": "fsm", "repeats": {"first": 1},
+   "note": "The version's own system prompt with tools, Skills and MCP switched off."},
+  {"group": "effort_medium", "versions": ["2.1.322"], "mode": "stock_blocked", "effort": "medium",
+   "remote_flags": "off", "config_set": "fsm", "repeats": {"first": 1}},
+  {"group": "effort_low", "versions": ["2.1.322"], "mode": "stock_blocked", "effort": "low",
+   "remote_flags": "off", "config_set": "fsm", "repeats": {"first": 1, "third": 2},
+   "note": "The yardstick: what a known cut in thinking effort does to these 78 items."},
+  {"group": "effort_xhigh", "versions": ["2.1.322"], "mode": "stock_blocked", "effort": "xhigh",
+   "remote_flags": "off", "config_set": "fsm", "repeats": {"first": 1}},
+  {"group": "effort_max", "versions": ["2.1.322"], "mode": "stock_blocked", "effort": "max",
+   "remote_flags": "off", "config_set": "fsm", "repeats": {"first": 1}},
+  {"group": "fable", "versions": ["2.1.322"], "mode": "stock_blocked", "effort": "high",
+   "remote_flags": "off", "config_set": "fsm", "model": "claude-fable-5-2", "repeats": {"first": 1}},
+  {"group": "api", "versions": ["2.1.322"], "mode": "api", "effort": "high", "remote_flags": "off",
+   "repeats": {"first": 1},
+   "note": "No Claude Code: the request of group author on 2.1.322, copied and sent straight to the Messages API."}
+ ]
+}

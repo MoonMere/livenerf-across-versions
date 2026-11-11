@@ -1,0 +1,18 @@
+{
+ "name_prefix": "F",
+ "arms_spec": "formal_arms.json",
+ "seed": "registered-run-20261111",
+ "units": "all",
+ "block_units": 3,
+ "parallel": 2,
+ "passes_first": 2,
+ "first_line": 0.70,
+ "third_line": 0.95,
+ "third_pass": "rule",
+ "stop_at_api_cost_usd": 25,
+ "fail_streak_stop": 8,
+ "max_outage_hours": 6,
+ "shuffles": 10000,
+ "health_config_set": "fsm",
+ "work_dir": "../../本机数据/正式跑"
+}
