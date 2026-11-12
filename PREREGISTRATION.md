@@ -409,3 +409,12 @@ The sentence this changes is in section 2: "Whether to add a group that runs thr
 **How it is compared.** With `main` on the version the sessions report, item by item as section 9 defines it, for accuracy and for thinking, as a difference and a range, with the note that the group is small. It is reported beside the main comparison. It takes no part in the tests of sections 5 and 6 or in the decision about pass 3.
 
 **Code.** The code that sends the registered run is unchanged and the run was not stopped. The Desktop records are made by a separate script that reads each session's file and writes a record in the registered format, so the registered grading code reads it unchanged. The record's `stdout` field is rebuilt from the session file and the record says so. The script is published with the results.
+
+### 12 November 2026, later: the Desktop group starts again with 77 questions
+
+The first try was stopped after 68 asks and none of them count. No Desktop answer had been graded. The session files showed two problems:
+
+- Most asks had gone out at effort low or medium. A session started with the app's tool gets at most the effort of the session that starts it, and that session's effort had been lowered part way.
+- The tool replaces every "@" in a question with a full-width "＠". One question has SMILES strings, so it can't be delivered unchanged.
+
+From here on an ask counts only if its session file shows effort high. The group has 77 questions, and the comparison with `main` uses the same 77. The questions are sent by a separate Claude session that stays at effort high.
