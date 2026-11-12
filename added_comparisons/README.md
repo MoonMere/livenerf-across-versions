@@ -1,4 +1,4 @@
-# Two comparisons added on 12 November 2026
+# Comparisons added on 12 November 2026
 
 Code for the two secondary comparisons in the change log entry "12 November 2026, evening" of `PREREGISTRATION.md`: time of day (`time_of_day.py`) and Desktop against `main` on 2.1.321 (`desktop_vs_cli.py`).
 
@@ -30,3 +30,26 @@ These were fixed here, before any result.
 ## Running it
 
 The folder sits beside `ccversions/`. `desktop_vs_cli.py` and the tests also need the runner modules (`settings.py`, `items.py`) and the script that made the Desktop records, which are published with the results. `time_of_day.py` runs with what is here when it is given `--graded` and `--versions-file`.
+
+## The group that replays the Desktop app's system prompt (added 12 November 2026, night)
+
+`desktop_prompt.py` computes the six comparisons of the change log entry "12 November 2026, night: a group that replays the Desktop app's system prompt". `test_desktop_prompt.py` holds 30 tests on made-up records.
+
+It was committed here before the group's first scored ask, before the final report of the registered run was opened, and before any answer of the run, of the Desktop group or of this group had been graded or looked at by us. It has run on made-up records only. The program refuses to run until the third Desktop round is in or 00:10 UTC on 13 November 2026 has passed.
+
+Choices the rule left open, fixed here before any result:
+
+- For b minus a and d minus e, the sign check takes pass k of one arm against pass k of the other. The two arms were sent in the same batch.
+- For e minus `main`, the check against the line for "clear" takes each pass of e against the mean of `main`'s passes, as the Desktop comparison does.
+- The warning on the two comparisons that cross the batches is added when accuracy (both ways of counting) or thinking reaches "clear" in e minus `main`. "Points one way" adds no warning.
+- Accuracy is computed both ways, as above. In "otherwise", X is the larger of the two.
+- A pass in which fewer than half the items of the comparison count on both sides is left out of the sign check. With no pass in the check, a result can't be "clear".
+- If one arm has fewer passes on an item than the other, each side is averaged over the passes it has.
+- The `main` side is 2.1.321's asks in the cells that count, on all 78 items.
+- The comparison with the Desktop group leaves out the one question the app can't deliver, on both sides. That leaves 77 items.
+- A pass is complete when it has all 78 items.
+- Records that are warm-ups, unscored, no items, of another group or of another version are left out and listed. A resent ask takes the place of the ask it was sent for. The small batch and the probes are not read.
+- If b minus a comes out clear, the two arms differ in the text only. What this run can't tell apart is which of the two added sections did it, or the extra length alone. The test that would: one arm for each section alone, and one arm with unrelated text of the same length.
+- If d minus e comes out clear, the arms differ in the whole system prompt. What this run can't tell apart is which part of the Desktop text did it, or its length. The test that would: start from the command line program's own prompt and add the Desktop sections one at a time, one arm each.
+
+The tests also need the script that sends this group, which is published with the results.
