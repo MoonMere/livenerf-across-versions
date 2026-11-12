@@ -383,4 +383,29 @@ While this rule was being written, the only data seen were the simulations and t
 
 ## Change log
 
-Nothing yet.
+### 12 November 2026: a Claude Desktop group is added
+
+The sentence this changes is in section 2: "Whether to add a group that runs through the Claude Desktop app is decided after the main results are in." Soren Hou decided on 12 November 2026 that the group is run and that the decision does not wait for the results. This entry was committed and pushed before the first Desktop question was sent.
+
+**What had been seen by then.** Pass 1 was complete and pass 2 was about seven tenths sent. Of the real asks, only these had been looked at: how many were sent, whether each was done or timed out, how long they took, what they cost and the usage reading. No answer had been graded. No accuracy or thinking number had been computed or looked at.
+
+**What the group is.**
+
+- The 78 questions, each asked twice (two rounds), one new Desktop session for each ask. Model `claude-opus-5-5`, effort high, permission mode default.
+- The Desktop app starts the Claude Code it ships with. On 12 November that was 2.1.321, one of the 39 versions. The version is read from every session's own file. If it changes part way, the asks of each version are reported apart.
+- The sessions run in an empty folder. Its settings keep out the user's own instruction files, memory and personal skills, and refuse every tool call with the same hook and the same sentence as `main`. Trial sessions on 12 November showed all of this working.
+- The questions are sent with the Desktop app's own tool for starting a session from another session, by the Claude session that looks after the run. Sessions are started one at a time and each is archived before the next one starts. A trial showed that a session started while another one is open gets one more line that lists the other sessions.
+- An ask counts only if the question the model received is the question's text byte for byte. An ask whose text differs is discarded and asked again. After that, section 3 decides which answers count, as for `main`. The timeout is 900 seconds from the question.
+- The order of the questions in each round is drawn from a fixed seed.
+
+**How it differs from `main` on the same version, besides going through the app.**
+
+- The app wraps the question. The first message reads "Background (from the session that started this one):", then LiveNerf's two sentences, then "Task:", then the question, then one line that names a shared notes folder. In `main` LiveNerf's two sentences are appended to the system prompt and the question is the whole message.
+- The system prompt has a section telling the model that it was started from another session.
+- Plugins, extensions and connectors installed in the app stay visible to the model, with the skills they bring. Their tools are refused like any other tool. The folder's settings can't take them out.
+- Whether the app's sessions fetch today's remote flags was not checked. `main` does not fetch them.
+- The sessions are asked one after another in one stretch of a few hours, on the same account, while the registered run is still going.
+
+**How it is compared.** With `main` on the version the sessions report, item by item as section 9 defines it, for accuracy and for thinking, as a difference and a range, with the note that the group is small. It is reported beside the main comparison. It takes no part in the tests of sections 5 and 6 or in the decision about pass 3.
+
+**Code.** The code that sends the registered run is unchanged and the run was not stopped. The Desktop records are made by a separate script that reads each session's file and writes a record in the registered format, so the registered grading code reads it unchanged. The record's `stdout` field is rebuilt from the session file and the record says so. The script is published with the results.
