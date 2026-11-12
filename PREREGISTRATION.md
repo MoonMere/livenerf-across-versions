@@ -403,7 +403,7 @@ The sentence this changes is in section 2: "Whether to add a group that runs thr
 - The app wraps the question. The first message reads "Background (from the session that started this one):", then LiveNerf's two sentences, then "Task:", then the question, then one line that names a shared notes folder. In `main` LiveNerf's two sentences are appended to the system prompt and the question is the whole message.
 - The system prompt has a section telling the model that it was started from another session.
 - Plugins, extensions and connectors installed in the app stay visible to the model, with the skills they bring. Their tools are refused like any other tool. The folder's settings can't take them out.
-- Whether the app's sessions fetch today's remote flags was not checked. `main` does not fetch them.
+- Whether the app's sessions fetch today's remote flags was not checked. `main` does not fetch them. (Looked at later: see "things that had been left unchecked" below.)
 - The sessions are asked one after another in one stretch of a few hours, on the same account, while the registered run is still going.
 
 **How it is compared.** With `main` on the version the sessions report, item by item as section 9 defines it, for accuracy and for thinking, as a difference and a range, with the note that the group is small. It is reported beside the main comparison. It takes no part in the tests of sections 5 and 6 or in the decision about pass 3.
@@ -445,3 +445,75 @@ The code for this is committed to this repository before the final report is ope
 - **Otherwise.** "No difference larger than X was seen", with X from the range.
 
 Two limits go beside any time of day result. In passes 1 and 2, all the asks inside US working hours were sent on one US working day, Wednesday 11 November. And that day was a US federal holiday. If the end of pass 3 runs past 14:00 UTC on 12 November, those asks are inside the hours of a second day, and the result gives the days as they were. A clear result is written as a difference between these hours on these days.
+
+### 12 November 2026, night: a group that replays the Desktop app's system prompt
+
+Decided while pass 3 was being sent. Soren Hou agreed to add the group. The design below is by the Claude session that looks after the run. This entry was pushed before the first scored ask of the group.
+
+**Why.** A separate look at Soren Hou's own Claude Code session files found two things. The Desktop app saves, at the start of every session it opens, a copy of the system prompt it gave the model. And that text changes while the Claude Code version stays the same. The largest change was on 14 October 2026 (UTC), when the text grew from 17,564 to 30,726 characters on 2.1.295. The registered run compares versions of the command line program, so a change of this kind is outside what it can see. The Desktop group uses the app on one day, so it sees one text only.
+
+**What had been seen by then.** Everything listed in the entry above, and also these. From the registered run: the first event of each ask, which lists the skills, plugins and MCP servers that were loaded. From the Desktop group: the system prompt each session saved, the beta list of each request, and whether a session file holds the word `userEmail`. From Soren Hou's everyday Desktop sessions: the saved system prompts, by heading, length and hash, and three of the texts in full. No answer had been read or graded. No accuracy or thinking number of this experiment had been computed or looked at, and the interim files had not been opened. A separate analysis of his everyday session files counts thinking by day. Its numbers had been read and were not checked. They are no part of this experiment.
+
+**What the group is.** The 78 questions, asked three times with each of five system prompts: 1,170 asks. All of them use the command line binary of 2.1.321, the same file as `main`.
+
+| Arm | System prompt | Where it comes from |
+|---|---|---|
+| `dsp_a` | the Desktop text before the change | saved by a Desktop session opened on 14 October 2026 at 12:34 UTC, on 2.1.295. 17,564 characters |
+| `dsp_b` | the Desktop text after the change | saved by a session opened on 14 October 2026 at 23:38 UTC, on 2.1.295. 30,726 characters. Every paragraph of the earlier text is in it word for word. It adds 13,154 characters: a section on starting other sessions, and a section on the task list and wrapping up |
+| `dsp_c` | the Desktop text of 12 November | saved by a session opened on 12 November 2026 at 07:12 UTC, on 2.1.321. 33,146 characters |
+| `dsp_d` | the Desktop text of the Desktop group | the text that all 154 sessions of the Desktop group saved. 33,330 characters. It has one section more than `dsp_c`, which tells the model that it was started from another session |
+| `dsp_e` | 2.1.321's own system prompt | unchanged, as in `main` |
+
+- The lengths in the table are those of the saved copy. It is a list of text items, measured here joined by single newlines. One item is only the marker `__SYSTEM_PROMPT_DYNAMIC_BOUNDARY__`.
+- As sent: the marker item is dropped, as 2.1.321 itself drops it before sending, and the other items are joined by an empty line into one text. In arms a, b and c the `# Memory` section (2,086 characters) is taken out. It names the user's memory folder, and the Desktop group's text has no such section. As sent, the four texts have 15,453, 28,615, 31,034 and 33,303 characters.
+- Arms a to d pass `--system-prompt` with the saved text, an empty line, and LiveNerf's two sentences. This replaces the version's own system prompt. Arm e appends LiveNerf's two sentences to the version's own system prompt, as `main` does.
+- Everything else is as in `main`: the model, effort high, tools visible and refused by the same hook, remote flags not fetched, the same fixed list of environment variables, the same login, output as `stream-json`. Three things differ from `main`. The config folders are new empty folders, one for each ask that runs at the same time, prepared the way the registered run prepares its folders. 5 asks run at a time, where `main` runs 2. And the asks are sent on another day.
+- A round is ordered the way the registered run orders a pass. The 78 questions are shuffled and cut into 26 blocks of 3. The 15 asks of a block (3 questions, 5 arms) go out in a shuffled order. Seed 20261111. So the arms share the same hours.
+- Section 3 decides which answers count. The run stops after 8 failed asks in a row, as the registered run does, and when the weekly usage reading reaches 0.99. If it stops part way, the asks that are in still count, and the report says how many rounds each arm got.
+- The sha256 of each text as sent is in `desktop_prompt/PROMPTS_SHA256.txt`.
+
+**Checks before the first scored ask.** One unscored ask for each arm, with its session file kept. For arms a to d, the system prompt in the request must hold the saved text byte for byte, followed by LiveNerf's two sentences. Anything the program puts around it is recorded and published. For arm e, the command and the names of the environment variables must match `main` on 2.1.321 except for the config folder. Then two questions for each arm, unscored, to check that the records are written as they should be. If a check fails, the group is not run.
+
+**How it is compared.** Item by item, as section 9 defines it, for accuracy and for thinking. p comes from flipping the sign of each item's difference 10,000 times, seed 20261111.
+
+| Comparison | What it asks | How it is worded |
+|---|---|---|
+| b minus a | whether the two sections added on 14 October changed anything. This is the main one | the three wordings of the entry above |
+| d minus e | whether swapping the command line program's own system prompt for the Desktop app's saved text changes anything | the three wordings of the entry above |
+| c minus b | the changes between 14 October and 12 November | difference and range |
+| d minus c | the section about being started from another session | difference and range |
+| e minus `main` on 2.1.321 | the same way of asking, on another day, in other folders, sent by another script | difference and range. If this one comes out clear by the lines of the entry above, a warning goes beside every comparison that crosses the two batches |
+| the Desktop group minus d, on its 77 questions | what the real app adds beyond the saved text | difference and range |
+
+For the three wordings, the parts that must have the same sign are the three rounds.
+
+**What size this can see.** One version answering the 78 items once varies by about 4.9 points (section 7). Two arms with three rounds each then differ by about 4 points by chance alone. A true difference of about 11 points would be found 8 times in 10 at p < 0.05. This figure is worked out from the 4.9 and was not simulated. Thinking is a continuous number and is more sensitive. How much more was not estimated.
+
+**Limits.**
+
+- The items are single questions with single answers. The two sections added on 14 October are about work in many steps: keeping a task list and starting other sessions. Finding no difference on these items would say nothing about that kind of work.
+- How the app splits the saved items into the blocks of a request was not looked at. Here they go out as one text.
+- The saved text is only part of what the app sends. The opening line, a long section of safety rules for browsing, the instructions of MCP servers, a block with the account's email address and git status, and the tool descriptions are missing from it. Arms a to d test the saved text, sent through the command line program.
+- All four texts come from one person's computer.
+- The group was added part way, after the things listed above had been seen.
+
+**Code.** The asks are sent by a separate script that uses the registered sender's modules unchanged. It is published with the results. The code for the comparisons is committed to this repository before the final report is opened.
+
+### 12 November 2026, night: things that had been left unchecked
+
+The project's own notes were read through for places where something was written down as not checked and nobody went back to it. Nine of them could bear on a conclusion. They were gone through before the final report was opened. No ask was sent for this and no answer was read.
+
+For the Desktop comparison:
+
+- **The binary.** The app's copy of 2.1.321 and the command line copy have the same size and different sha256. With the code signatures removed, the two files differ in two places only: the header at the start of the file, and a property list embedded in the command line copy. Every other byte is the same. So the Desktop group runs the same program as `main` on 2.1.321. Section 2's sentence about sha256 covers the 39 command line binaries.
+- **Remote flags.** This replaces the line "Whether the app's sessions fetch today's remote flags was not checked." In the trials, 2.1.321 sent three beta names with remote flags fetched that it leaves out without them. None of the three is in any of the 257 requests recorded in the Desktop group's folder. In 256 of them the beta list is the list `main` sends plus one name. The other request belongs to a trial session. Whether the app fetched the flags can't be seen in the records. What can be seen is that these three were off.
+- **Environment variables.** The variables the app's sessions run with were not recorded for rounds 1 and 2. Their names are recorded at round 3.
+- **Login.** The app uses its own login and the registered run uses a token. One thing that follows from this was found. 229 of the 230 session files in the Desktop group's folder hold the word `userEmail`, the name of a block that shows the model the account's email address. In the trials with the token login the model saw no email address. That was looked at on 2.1.280 and 2.1.322 only. This is one more difference between the Desktop group and `main`.
+- **The system prompt.** The text the Desktop group's sessions saved has 33,330 characters. The system prompt that 2.1.321 sent in the trials, with tools switched off and remote flags not fetched, had 5,922 characters with LiveNerf's two sentences. The two share the headings `# Harness`, `# Environment` and `# Context management`. The group in the entry above measures what this difference does.
+
+For the main comparison:
+
+- **Skills, plugins and MCP servers.** Section 2 says that nothing comes from anyone's own setup. The trials had looked at two versions. The first event of each ask has now been read for all 39 versions: 3 trial asks for each version, every ask of passes 1 and 2, and the 2,283 asks of pass 3 that were in by then. No MCP server was loaded in any of them, every plugin was built into the program, and no skill of the user's own was there. The program's own lists differ by version: no plugin in 2.1.280, one from 2.1.281, two from 2.1.286 and three from 2.1.317, with 16 skills up to 2.1.285 and 17 from 2.1.286. In `flags_on` the fetched flags add one built-in plugin and two skills.
+- **Fallback on the oldest versions.** On 2.1.280 to 2.1.284 the usage block may fail to show that the safety classifier moved an ask to another model. Such an answer would then be graded as an Opus 5.5 answer where a later version would void it. LiveNerf saw 9 such asks in 3,666. The report gives the number of voided asks for every version, so that a gap in these five can be seen.
+- **Effort on versions before 2.1.300.** These 18 versions keep no record of the request. The effort is the one the program reports. If one of them lowered the effort without saying so, this run can't see it.
+- **LiveNerf's two sentences on versions before 2.1.300.** `--append-system-prompt` is in the help text of all 39 versions and none of them rejects it. That the two sentences reach the model was seen in the requests of the 21 versions from 2.1.300 on. For the 18 before, it had not been checked directly. After pass 3 one unscored ask goes to each of the 18 to check it, and the report says what it showed.

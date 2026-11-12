@@ -1,0 +1,8 @@
+sha256 of each saved Desktop system prompt as sent in the group of 12 November 2026, night (see PREREGISTRATION.md, Change log).
+Each text is the saved list of items without the marker item, joined by an empty line. In a, b and c the `# Memory` section is taken out.
+In the request it is followed by an empty line and LiveNerf's two sentences.
+
+4eeb0a52bea76e79562998e6e8e13f506fc0072ddc4885466dedeea27e8b475c  dsp_a  15453 characters
+6710aee70c3b21d70e16eef1b56f81a889af267126147e6d8471dd4f738fdc6f  dsp_b  28615 characters
+b0e149a79592a6668585602e12baee4125f514c40f613e152bf017f250742aa0  dsp_c  31034 characters
+d53cd48dfd4985c3c8efd5aec38dd18d42bdf877efc45bdd0c01c028c5c8a75a  dsp_d  33303 characters
