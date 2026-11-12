@@ -427,7 +427,7 @@ Both were decided while pass 3 was being sent. This entry was pushed before pass
 
 **US working hours** means Monday to Friday, 9 am US Eastern to 5 pm US Pacific. In November that is 14:00 UTC to 01:00 UTC the next day. An ask is inside or outside by the time it was sent.
 
-**A third Desktop round.** The group is compared with `main` on 2.1.321, which now has three passes. Both Desktop rounds were sent between 04:24 and 05:38 UTC on 12 November, outside US working hours. In `main`, 63% of pass 1 and 49% of pass 2 were sent inside them, and pass 3 is expected to fall outside. So the group gets a third round of the same 77 questions, sent inside US working hours on Thursday 12 November US time, the same way as the first two, with its order drawn from the same seed. With it, a third of the Desktop asks are inside those hours, against a bit over a third in `main`. If the round has not started by 00:10 UTC on 13 November, or the app no longer starts 2.1.321, the group stays at two rounds. The final report of the registered run stays unopened until the round is in or that time has passed.
+**A third Desktop round.** The group is compared with `main` on 2.1.321, which now has three passes. Both Desktop rounds were sent between 04:24 and 05:38 UTC on 12 November, outside US working hours. Counting every group, 63% of the asks of pass 1 and 49% of pass 2 were sent inside them, and most or all of pass 3 is expected to fall outside. So the group gets a third round of the same 77 questions, sent inside US working hours on Thursday 12 November US time, the same way as the first two, with its order drawn from the same seed. With it, a third of the Desktop asks are inside those hours, against a bit over a third of the registered run's. If the round has not started by 00:10 UTC on 13 November, or the app no longer starts 2.1.321, the group stays at two rounds. The final report of the registered run stays unopened until the round is in or that time has passed.
 
 **Time of day.** Soren Hou noticed that the passes cover different hours of the day. A pass takes about ten hours and each pass asks the items in a new random order. So every item was answered by all 39 versions at two or three different times of day. The run was not designed for this. It is added to the secondary numbers of section 8, for `main` only.
 
@@ -436,7 +436,7 @@ Both were decided while pass 3 was being sent. This entry was pushed before pass
 - The same fit with a separate difference for each pass gives two parts: the inside hours of pass 1 (the US morning and early afternoon) and of pass 2 (the US afternoon and evening).
 - Published without a verdict: the mean for each hour of the day in UTC, after item and pass are taken out, so the day can be cut another way.
 
-The code for this is committed to this repository before the final report is opened.
+The code for this is committed to this repository before the final report is opened. It is in `added_comparisons/`.
 
 **How these two comparisons are worded.** Soren Hou's point was that a large difference by time of day, or between Desktop and `main`, deserves more than a bare number. For these two comparisons only, three wordings are fixed here.
 
@@ -444,4 +444,4 @@ The code for this is committed to this repository before the final report is ope
 - **Points one way.** p < 0.05 and the size, short of clear. Reported with its range and those words.
 - **Otherwise.** "No difference larger than X was seen", with X from the range.
 
-Two limits go beside any time of day result. All the asks inside US working hours were sent on one US working day, Wednesday 11 November. And that day was a US federal holiday. A clear result is written as a difference between these hours on these days.
+Two limits go beside any time of day result. In passes 1 and 2, all the asks inside US working hours were sent on one US working day, Wednesday 11 November. And that day was a US federal holiday. If the end of pass 3 runs past 14:00 UTC on 12 November, those asks are inside the hours of a second day, and the result gives the days as they were. A clear result is written as a difference between these hours on these days.
