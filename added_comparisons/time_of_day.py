@@ -44,7 +44,8 @@ import common
 from common import analyze
 
 LIMITS = (
-    "All the asks inside US working hours were sent on one US working day, Wednesday 11 November 2026.",
+    "In passes 1 and 2, all the asks inside US working hours were sent on one US working day, Wednesday 11 "
+    "November 2026.",
     "That day was a US federal holiday (Veterans Day). A clear result is a difference between these hours on "
     "these days.",
 )
@@ -346,8 +347,9 @@ def analyse(rows: list[dict], versions: list[str], *, shuffles: int = common.SHU
     rep["us_days_of_inside_asks"] = us_days_of_inside_asks(rows)
     other = [d for d in rep["us_days_of_inside_asks"] if d != LIMITS_DAY]
     if other:
-        rep["warning"] = (f"the limits of section 15 say every ask inside US working hours was sent on {LIMITS_DAY}, "
-                          f"but main has such asks on {other} as well: the two limit sentences need new words")
+        rep["warning"] = (f"main has asks inside US working hours on {other} as well as on {LIMITS_DAY}. If they are "
+                          f"the end of pass 3, the result gives the days as they were (change log, 12 November "
+                          f"evening). If any is in pass 1 or 2, the first limit sentence is wrong and needs new words")
     rep["causes_to_list_if_clear"] = list(CAUSES)
     rep["test_that_would_tell_them_apart"] = RETEST
     return rep
