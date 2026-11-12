@@ -521,3 +521,23 @@ For the main comparison:
 - **Fallback on the oldest versions.** On 2.1.280 to 2.1.284 the usage block may fail to show that the safety classifier moved an ask to another model. Such an answer would then be graded as an Opus 5.5 answer where a later version would void it. LiveNerf saw 9 such asks in 3,666. The report gives the number of voided asks for every version, so that a gap in these five can be seen.
 - **Effort on versions before 2.1.300.** These 18 versions keep no record of the request. The effort is the one the program reports. If one of them lowered the effort without saying so, this run can't see it.
 - **LiveNerf's two sentences on versions before 2.1.300.** `--append-system-prompt` is in the help text of all 39 versions and none of them rejects it. That the two sentences reach the model was seen in the requests of the 21 versions from 2.1.300 on. For the 18 before, it had not been checked directly. After pass 3 one unscored ask goes to each of the 18 to check it, and the report says what it showed.
+
+### 13 November 2026: a third pass for group `api`
+
+Decided on 13 November 2026 at about 10:25 in Melbourne (12 November, 23:25 UTC). This entry was pushed before the first ask of this pass.
+
+**Why.** Soren Hou asked whether the API group should have three passes like the two other ways of reaching the model, the command line program and the Desktop app. Of all the comparisons in section 9, `api` against `author` on 2.1.322 has the fewest asks when both sides are counted: 78 questions on two passes on each side. Its API asks are paid from API credits and take nothing from the weekly usage of the subscription.
+
+**What had been seen by then.** Everything listed in the entries above, and also these. The line the run logs after pass 3, which gives a yes or no for whether each of the two tests declared a difference on three passes. The answers to the 19 unscored asks that checked LiveNerf's two sentences on the versions before 2.1.300. For every ask of the desktop-prompt group: whether it was done, the model, the input token count of the first request and whether a tool ran. The names of the environment variables of three sessions of Desktop round 3. Of group `api` in passes 1 and 2: whether each ask was done, its HTTP status and its cost. No answer of the registered run, the Desktop group or the desktop-prompt group had been read or graded. The final report and the interim files had not been opened.
+
+**What is added.** 156 asks: the 78 questions once more for group `api`, and once more for group `author` on 2.1.322, the group it is compared with. Both groups are specified as in section 2. The two go out in one plan made by the registered sender with the registered seed: 26 blocks of three questions, the six asks of a block in shuffled order, two at a time. In passes 1 and 2 the two groups were also mixed in one sequence, so in every pass they share the same hours. A dry run showed that each of the 156 asks is the same as the pass 2 ask of the same group and question: command, question, config folder, names of the environment variables, API request template and beta list.
+
+**How it is compared.** As in section 9: item by item, each side averaged over its passes. The report of the registered run gives the figure on two passes. The figure on three passes is given beside it and marked as added.
+
+**Limits.**
+
+- Pass 3 of these two groups is sent on 13 November in Melbourne, and passes 1 and 2 on 11 and 12 November. The two groups are sent together, so the comparison between them does not depend on the day.
+- In pass 3 the two groups are sent on their own. In passes 1 and 2 they sat among the asks of the 39 versions.
+- `author` on 2.1.280 gets no third pass. Its comparison with LiveNerf's published figures stays on two passes.
+- The other small groups stay on two passes: `flags_on`, `notools`, the effort groups other than `effort_low`, and `fable`. A third pass narrows a range by one fifth at most, by formula. The subscription's weekly usage stood at 86%, and one more pass of these groups was estimated to take 5 to 7 points of it.
+
