@@ -418,3 +418,30 @@ The first try was stopped after 68 asks and none of them count. No Desktop answe
 - The tool replaces every "@" in a question with a full-width "＠". One question has SMILES strings, so it can't be delivered unchanged.
 
 From here on an ask counts only if its session file shows effort high. The group has 77 questions, and the comparison with `main` uses the same 77. The questions are sent by a separate Claude session that stays at effort high.
+
+### 12 November 2026, evening: a third Desktop round, and a comparison by time of day
+
+Both were decided while pass 3 was being sent. This entry was pushed before pass 3 ended and before the third Desktop round was sent.
+
+**What had been seen by then.** From the registered run: how many asks were sent, whether each was done or timed out, how long they took, what they cost, the usage reading, and the line the run logs after pass 2. That line says whether pass 3 opens and gives a yes or no for whether each of the two tests had declared a difference on two passes. No segment, version, accuracy or thinking number had been looked at, and the interim files had not been opened. From the Desktop group: each ask's duration and output token count, and that 20 asks tried a tool and were refused. No Desktop answer had been graded.
+
+**US working hours** means Monday to Friday, 9 am US Eastern to 5 pm US Pacific. In November that is 14:00 UTC to 01:00 UTC the next day. An ask is inside or outside by the time it was sent.
+
+**A third Desktop round.** The group is compared with `main` on 2.1.321, which now has three passes. Both Desktop rounds were sent between 04:24 and 05:38 UTC on 12 November, outside US working hours. In `main`, 63% of pass 1 and 49% of pass 2 were sent inside them, and pass 3 is expected to fall outside. So the group gets a third round of the same 77 questions, sent inside US working hours on Thursday 12 November US time, the same way as the first two, with its order drawn from the same seed. With it, a third of the Desktop asks are inside those hours, against a bit over a third in `main`. If the round has not started by 00:10 UTC on 13 November, or the app no longer starts 2.1.321, the group stays at two rounds. The final report of the registered run stays unopened until the round is in or that time has passed.
+
+**Time of day.** Soren Hou noticed that the passes cover different hours of the day. A pass takes about ten hours and each pass asks the items in a new random order. So every item was answered by all 39 versions at two or three different times of day. The run was not designed for this. It is added to the secondary numbers of section 8, for `main` only.
+
+- For each item and pass: the mean over the 39 versions (accuracy, and `ln(thinking tokens + 1)`), and the share of those asks sent inside US working hours.
+- A least squares fit of that mean on item, pass and share inside gives the difference inside minus outside, with item difficulty and whole-pass differences taken out. The range redraws the items 10,000 times. The p value shuffles the items' places within each pass 10,000 times, which is the randomisation the run itself used. Seed 20261111.
+- The same fit with a separate difference for each pass gives two parts: the inside hours of pass 1 (the US morning and early afternoon) and of pass 2 (the US afternoon and evening).
+- Published without a verdict: the mean for each hour of the day in UTC, after item and pass are taken out, so the day can be cut another way.
+
+The code for this is committed to this repository before the final report is opened.
+
+**How these two comparisons are worded.** Soren Hou's point was that a large difference by time of day, or between Desktop and `main`, deserves more than a bare number. For these two comparisons only, three wordings are fixed here.
+
+- **Clear.** All of: p < 0.01. A size of at least 3 points for accuracy or 10% for thinking. The same sign in each part taken alone, where the parts are the two above for time of day, and each Desktop round against the mean of `main` for Desktop. For time of day, also larger than the largest difference between the levels of two passes in the same fit. For Desktop, p comes from flipping the sign of each item's difference 10,000 times. A clear difference goes into the summary of the results in plain words, followed by the causes this run can't tell apart and the test that would tell them apart.
+- **Points one way.** p < 0.05 and the size, short of clear. Reported with its range and those words.
+- **Otherwise.** "No difference larger than X was seen", with X from the range.
+
+Two limits go beside any time of day result. All the asks inside US working hours were sent on one US working day, Wednesday 11 November. And that day was a US federal holiday. A clear result is written as a difference between these hours on these days.
