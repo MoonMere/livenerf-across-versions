@@ -454,6 +454,8 @@ Decided while pass 3 was being sent. Soren Hou agreed to add the group. The desi
 
 **What had been seen by then.** Everything listed in the entry above, and also these. From the registered run: the first event of each ask, which lists the skills, plugins and MCP servers that were loaded. From the Desktop group: the system prompt each session saved, the beta list of each request, and whether a session file holds the word `userEmail`. From Soren Hou's everyday Desktop sessions: the saved system prompts, by heading, length and hash, and three of the texts in full. No answer had been read or graded. No accuracy or thinking number of this experiment had been computed or looked at, and the interim files had not been opened. A separate analysis of his everyday session files counts thinking by day. Its numbers had been read and were not checked. They are no part of this experiment.
 
+**Added on 12 November 2026 at 23:45 AEDT, before the first ask of this group.** The registered run ended at 12:42 UTC. Two more things had been seen by then. One is the line the run logs after pass 3. It gives a yes or no for whether each of the two tests declared a difference on three passes. The other is the input token count of the first request of each `main` ask on 2.1.321, which the checks below compare with arm e. The final report and the interim files had not been opened, and no answer of the registered run had been read or graded.
+
 **What the group is.** The 78 questions, asked three times with each of five system prompts: 1,170 asks. All of them use the command line binary of 2.1.321, the same file as `main`.
 
 | Arm | System prompt | Where it comes from |
