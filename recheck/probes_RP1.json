@@ -1,0 +1,189 @@
+{
+ "format": "ccversions-probe-plan-spec-v1",
+ "name": "RP1",
+ "purpose": "Probes before the first scored ask of the two groups added on 13 November 2026 (PREREGISTRATION.md, change log). Unscored. Block 0: 2.1.323 alone, six asks in written order. Block 1: the ten versions, the main ask at high and at xhigh. All into config set rp (folders made for these probes, remote flags off), session files kept.",
+ "effort": "high",
+ "remote_flags": "off",
+ "parallel": 2,
+ "stop_at_weekly_utilization": 0.99,
+ "defaults": {
+  "config_set": "rp",
+  "keep_transcript": true
+ },
+ "blocks": [
+  [
+   {
+    "version": "2.1.323",
+    "mode": "stock_notools",
+    "unit": "probe:author-ok",
+    "effort": "low",
+    "warmup": true,
+    "label": "2.1.323: 1st ask in a fresh folder, tools off, low"
+   },
+   {
+    "version": "2.1.323",
+    "mode": "stock_notools",
+    "unit": "probe:author-ok",
+    "effort": "low",
+    "label": "2.1.323: 2nd ask in that folder, tools off, low"
+   },
+   {
+    "version": "2.1.323",
+    "mode": "stock",
+    "unit": "probe:author-ok",
+    "label": "2.1.323: tools on, high"
+   },
+   {
+    "version": "2.1.323",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "label": "main ask, high"
+   },
+   {
+    "version": "2.1.323",
+    "mode": "stock_blocked",
+    "unit": "probe:tool-bash-canary",
+    "label": "2.1.323: told to run a shell command, every call refused"
+   },
+   {
+    "version": "2.1.323",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "effort": "xhigh",
+    "label": "main ask, xhigh"
+   }
+  ],
+  [
+   {
+    "version": "2.1.311",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "label": "main ask, high"
+   },
+   {
+    "version": "2.1.311",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "effort": "xhigh",
+    "label": "main ask, xhigh"
+   },
+   {
+    "version": "2.1.312",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "label": "main ask, high"
+   },
+   {
+    "version": "2.1.312",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "effort": "xhigh",
+    "label": "main ask, xhigh"
+   },
+   {
+    "version": "2.1.314",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "label": "main ask, high"
+   },
+   {
+    "version": "2.1.314",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "effort": "xhigh",
+    "label": "main ask, xhigh"
+   },
+   {
+    "version": "2.1.315",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "label": "main ask, high"
+   },
+   {
+    "version": "2.1.315",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "effort": "xhigh",
+    "label": "main ask, xhigh"
+   },
+   {
+    "version": "2.1.316",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "label": "main ask, high"
+   },
+   {
+    "version": "2.1.316",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "effort": "xhigh",
+    "label": "main ask, xhigh"
+   },
+   {
+    "version": "2.1.317",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "label": "main ask, high"
+   },
+   {
+    "version": "2.1.317",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "effort": "xhigh",
+    "label": "main ask, xhigh"
+   },
+   {
+    "version": "2.1.318",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "label": "main ask, high"
+   },
+   {
+    "version": "2.1.318",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "effort": "xhigh",
+    "label": "main ask, xhigh"
+   },
+   {
+    "version": "2.1.319",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "label": "main ask, high"
+   },
+   {
+    "version": "2.1.319",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "effort": "xhigh",
+    "label": "main ask, xhigh"
+   },
+   {
+    "version": "2.1.321",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "label": "main ask, high"
+   },
+   {
+    "version": "2.1.321",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "effort": "xhigh",
+    "label": "main ask, xhigh"
+   },
+   {
+    "version": "2.1.322",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "label": "main ask, high"
+   },
+   {
+    "version": "2.1.322",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "effort": "xhigh",
+    "label": "main ask, xhigh"
+   }
+  ]
+ ]
+}
