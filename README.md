@@ -2,7 +2,7 @@
 
 Same model, same 78 questions, 39 versions of Claude Code. Does the version change how well Claude Opus 5.5 answers, or how much it thinks?
 
-**Status:** the rule for reading the results is registered in [PREREGISTRATION.md](PREREGISTRATION.md), before the run. No question of the run has been sent yet. The results will go here when it ends, whatever they show.
+**Status (13 November 2026):** the rule for reading the results was registered in [PREREGISTRATION.md](PREREGISTRATION.md) before the run. The registered run was sent on 11 and 12 November 2026 and is finished. Its reports have not been opened yet. The change log at the end of that file lists every group and comparison added after the run began, with what had been seen each time. The results will go here, whatever they show.
 
 ## Why
 
