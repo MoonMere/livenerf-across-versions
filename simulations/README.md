@@ -169,3 +169,16 @@ The output is plain text. Its labels:
 | `能看出多大的差别（粗算）` | a rough estimate of the thinking difference that could be seen, made before simulation 5 and replaced by it |
 | `整段约少 X%，单个版本约少 Y%` | about X% less over a long run, about Y% less in one version |
 | `factor 取 4.1` | the factor of the rough estimate, set so that the same rough method matched simulation 4's accuracy numbers |
+
+## After a third pass has opened (added 13 November 2026)
+
+Folder `after_third_pass/`. This is item 12 of the change log entry "13 November 2026: extra numbers and wordings" in PREREGISTRATION.md. It was run and added here before the final report and the interim files of the registered run were opened.
+
+| File | What it is |
+|---|---|
+| `count_after_third_pass.py` | Makes simulation 5's datasets again for the four scenarios with no difference (same seeds, 4,000 datasets each, 1,000 shuffles) and counts how often a difference is declared among the datasets in which the third pass opened, split by the test that opened it. It calls simulation 5 and `../ccversions/judge.py` unchanged. Its docstring says how it is run |
+| `output_after_third_pass.txt` | Its output. Part 1 recounts the 112 shares that the registered output of simulation 5 gives for these scenarios. All 112 are the same to the four decimals printed there. Part 2 holds the new tables |
+| `output_after_third_pass.json` | The same counts, for programs |
+| `output_after_third_pass_datasets.csv` | One line per made-up dataset (16,000), so that any count can be redone |
+
+The scenario names in the output are simulation 5's: `没有差别` (no difference, third pass sent in full), `没有差别_答对和思考有关联0.5` (the same, with right answers and long thinking linked inside an ask), `没有差别_第三遍只跑了一半` and `没有差别_第三遍只跑了四分之一` (the third pass stops after a half or a quarter).

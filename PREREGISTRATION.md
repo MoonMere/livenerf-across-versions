@@ -635,3 +635,44 @@ This replaces two sentences in the limits of the entry "a third pass for group `
 - In pass 3 these groups are sent on their own. In passes 1 and 2 `flags_on` and `author` sat among the asks of the 39 versions.
 - The stop line for these asks is a weekly usage reading of 0.99. If it is reached, the asks go on after Soren Hou resets the usage of the account, and the report gives the hours of the gap. Section 4's rule that nothing waits for a reset was written for the registered run.
 - These asks were added after the yes or no line had been seen, as stated above.
+
+### 13 November 2026, afternoon: `nosent` is sent another way, and the checks before its first scored ask
+
+Written on 13 November 2026 at about 13:45 in Melbourne (02:45 UTC). This entry was pushed before the first scored ask of group `nosent` and before the final report and the interim files were opened.
+
+**What had been seen by then.** Everything listed in the entries above, and also these. Of the third pass of `flags_on` and of `author` on 2.1.280: that all 390 asks came back done, and the fields that say how each was sent. Of the eight probes below: the command, the system prompt each one sent or stored, and the input token count of its first request. No answer has been read, the probes' answers included. No accuracy, thinking or output number of any group has been looked at, and the final report and the interim files have not been opened.
+
+**The sentence this changes.** In the entry above: "Each ask is the `main` ask of that version with one thing taken out: the `--append-system-prompt` argument and the two sentences that follow it." The script was written that way first, and the checks that entry asks for were run on it.
+
+- The command printed beside `main`'s differed in that pair alone, on both versions. The commands recorded for the 468 `main` asks on these two versions were this group's commands once the pair was taken out.
+- Four unscored probes: on each version one sent this group's way and one sent `main`'s way beside it, to compare. The entry above named one per version. The second one was added so that the two could be compared word for word.
+- On 2.1.322 the request can be read as it was sent. Without the pair, LiveNerf's two sentences were gone, and the first line of the system prompt had changed as well. Sent `main`'s way it reads `You are Claude Code, Anthropic's official CLI for Claude, running within the Claude Agent SDK.` Without the pair it read `You are a Claude agent, built on Anthropic's Claude Agent SDK.` Nothing else differed.
+- On 2.1.280 only a copy of the system prompt that the program stores can be read, and that copy has no first line. The two copies differed in LiveNerf's two sentences alone.
+- On both versions the first request had 62 fewer input tokens than `main`'s.
+
+So leaving the pair out changes two things, and this group is meant to change one.
+
+**How it is sent now.** `--append-system-prompt` stays in the command, and the text after it is one space character (U+0020). Everything else is as the entry above says. The Claude session that looks after the run decided this before any scored ask of the group. Four new probes of the same design were sent:
+
+- On 2.1.322 the first line is the same in both probes and LiveNerf's two sentences are gone. The system prompt as sent is `main`'s with the two sentences removed, except that it ends with an empty line and one space.
+- On 2.1.280 the stored copies show the same.
+- On both versions the first request has 51 fewer input tokens than `main`'s. On 2.1.280 the first line can't be read, so that it stayed the same rests on this number: it is the number of 2.1.322, where the first line was read, and it was 62 on both versions when the first line had changed.
+
+The eight probes are unscored. The group uses `main`'s config folders for the two versions. A listing of both folders before the first probe and after the last shows no file added or removed. The files whose content changed are files that every ask rewrites.
+
+Before the rest goes out, the first block of six asks is sent, and the input token count of each first request is compared with `main`'s for the same version and question. If the gap is not the one the probes showed, the group stops there and this log says what was found. An ask that never reached the model is sent once more at the end of its pass, as section 3 says. The sha256 of the script that sends the group is `dfad1b2f200f659a2f85171ba4edfb965e1a5dcc5e3e9e644af44208acf35282`. It is published with the results.
+
+**A correction to "What size this can see" in the entry above.** The figures there, about 11 points on one version and about 8 with the two together, are for `nosent` against `main`. The second comparison, whether the two sentences change the gap between the two versions, takes four sets of answers, and its figure is about 16 points. It is worked out the same way and was not simulated. "A third pass narrows a range of the small groups by about one tenth" is about the range of a group's difference from `main`, which already has three passes.
+
+**Item 12 of "extra numbers", counted.** Simulation 5's made-up datasets were made again with the same seeds, and each dataset's path was kept (`simulations/after_third_pass/`). The recount gives the same 112 shares as the registered output. With 39 identical versions and the third pass sent in full, 742 of 4,000 datasets opened a third pass.
+
+| Third pass opened by | Datasets | Accuracy difference declared | Thinking difference declared |
+|---|---|---|---|
+| either test | 742 | 94 (12.7%, 95% range 10.4% to 15.3%) | 70 (9.4%, 7.4% to 11.8%) |
+| the accuracy test alone | 345 | 69 (20.0%) | 4 (1.2%) |
+| the thinking test alone | 357 | 10 (2.8%) | 58 (16.2%) |
+| both | 40 | 15 | 8 |
+
+Over all 4,000 datasets the shares are 2.7% and 1.9%, as in section 4. Which row fits this run is known once the interim report is opened, and the results give that row beside the "less than 5%". These counts replace the rough "about one in four" named in the limits of the entry "extra numbers and wordings". Their limits are simulation 5's: 1,000 shuffles for each dataset, no errors or voids, no asks with zero thinking. The output also covers the three other scenarios of section 4.
+
+**Code for the extra numbers.** The program for items 1 to 8, 13 to 15 and 18 of that entry is in `extra_numbers/`, committed with this entry. It has run on made-up data only. Its README lists 20 places where the entry could be read two ways and the reading that was fixed, before any result.
