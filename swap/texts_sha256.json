@@ -1,0 +1,104 @@
+{
+ "format": "swap-texts-v1",
+ "made_at": "2026-11-13T13:37:14+00:00",
+ "source_file": "the session files of the probes of 13 November 2026 (plan RP1), not published",
+ "source_sha256": "a27f746ec504a51faffe7dd82309651c906e657656e657ac7612676dece44b17",
+ "source_lines": 26,
+ "source_filter": {
+  "mode": "stock_blocked",
+  "effort_requested": "high",
+  "warmup": false,
+  "unit": "probe:author-ok",
+  "first_request_input_tokens_below": 20000
+ },
+ "source_asks": {
+  "2.1.316": {
+   "run": "RP1",
+   "ask_id": "p1b001o00015",
+   "version": "2.1.316",
+   "first_request_input_tokens": 16340,
+   "shapeHash": "9ab68ddb3f204b3e24714ceea6526164aa72191023871c1fb4aaa4d39a40149b"
+  },
+  "2.1.317": {
+   "run": "RP1",
+   "ask_id": "p1b001o00017",
+   "version": "2.1.317",
+   "first_request_input_tokens": 16363,
+   "shapeHash": "475fd5bca797bb71761f44d0a6759da930dd207203ca54c3a5bac415b6bab828"
+  }
+ },
+ "how": "STATIC is the second system block of 2.1.316's ask. DYNAMIC_OLD and DYNAMIC_NEW are the third block of 2.1.316's and of 2.1.317's ask without the two newlines and the author's text at its end, with that ask's own config folder path replaced by {CONFIG_DIR}. The files hold the text exactly, with no newline added.",
+ "sentences": {
+  "2.1.316": "Do build original games, games in a genre, and games from the user's own designs and assets. Don't build a recreation of a specific existing game, even if it is renamed or called original.",
+  "2.1.317": "Do build original games, games in a genre or with similar mechanics, and games from the user's own designs and assets. Don't build a recreation of a specific existing game (its name, characters, art, music, levels or look), even if it is renamed or called original."
+ },
+ "author_text": {
+  "chars": 190,
+  "sha256": "f64f62938aa26353955e93a2296f5635a86ea07459c80cfc4774f73d8c16182f"
+ },
+ "checks": [
+  {
+   "check": "0 (added)",
+   "what": "each ask has three system blocks of text and an absolute config folder path",
+   "ok": true
+  },
+  {
+   "check": 1,
+   "what": "the first block of both asks is the opening sentence \"You are Claude Code, Anthropic's official CLI for Claude, running within the Claude Agent SDK.\"",
+   "ok": true
+  },
+  {
+   "check": 2,
+   "what": "the second block is the same in both asks",
+   "ok": true
+  },
+  {
+   "check": 3,
+   "what": "the third block of both asks ends with two newlines and the author's text",
+   "ok": true
+  },
+  {
+   "check": 5,
+   "what": "each dynamic text holds {CONFIG_DIR} at least once and its probe's config folder path no more",
+   "ok": true,
+   "placeholder_count": {
+    "DYNAMIC_OLD": 1,
+    "DYNAMIC_NEW": 1
+   }
+  },
+  {
+   "check": 4,
+   "what": "DYNAMIC_OLD holds 2.1.316's two sentences once, DYNAMIC_NEW 2.1.317's once, and DYNAMIC_OLD with them replaced by 2.1.317's equals DYNAMIC_NEW",
+   "ok": true
+  },
+  {
+   "check": "6 (added)",
+   "what": "no text holds a line Claude Code cuts a prompt at (__SYSTEM_PROMPT_DYNAMIC_BOUNDARY__, __SYSTEM_PROMPT_STATIC_BREAKPOINT__)",
+   "ok": true
+  }
+ ],
+ "texts": [
+  {
+   "name": "STATIC",
+   "file": "STATIC.txt",
+   "chars": 1229,
+   "sha256": "aac4ba4cc7b555b3a32704850028e242a6e3045df91d7970f04d18c378e57f40",
+   "placeholder_count": 0
+  },
+  {
+   "name": "DYNAMIC_OLD",
+   "file": "DYNAMIC_OLD.txt",
+   "chars": 4440,
+   "sha256": "10f8b3b7fc353a12ff6460891d980fc9da2f6fb0e4fe1bb83c37fb0f1d723168",
+   "placeholder_count": 1
+  },
+  {
+   "name": "DYNAMIC_NEW",
+   "file": "DYNAMIC_NEW.txt",
+   "chars": 4517,
+   "sha256": "d8e3ecaef4cd9b762b7157b64cf40f5f716e4ae26e46894f8810c3012ba3da0b",
+   "placeholder_count": 1
+  }
+ ],
+ "note": "The three texts are parts of the system prompt that Claude Code 2.1.316 and 2.1.317 sent. They are not published here. Their lengths and hashes are."
+}

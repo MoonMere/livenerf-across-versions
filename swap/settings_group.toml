@@ -1,0 +1,19 @@
+# The part of the local settings file that shapes group swap. The paths of the computer it ran on are left out.
+[group]
+# No new ask is started once the weekly usage reading is at this share.
+weekly_line = 0.95
+# Asks at once. One config folder never has two asks at a time.
+parallel = 2
+# Sets of worker config folders. Each set has one folder for 2.1.316 and one for 2.1.317.
+sets = 3
+# The ways the scored passes ask. sw_n (the command with nothing added) is sent in the probes only.
+scored_groups = ["sw_o", "sw_w"]
+# How the two blocks are joined: join0, join1, join2 or marker. The first step of the probes decides it.
+structure = "join2"
+# The questions: ../recheck/items_think_more_24.json
+item_list = "../recheck/items_think_more_24.json"
+# Passes in all, and the passes of stage 1.
+passes = 12
+stage1_passes = 6
+# The seed for the order of each pass and for the set each question takes, with the pass number added.
+seed = "swap-20261114"
