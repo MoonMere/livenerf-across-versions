@@ -1,0 +1,17 @@
+{
+ "name_prefix": "X",
+ "arms_spec": "arms_xhigh.json",
+ "seed": "recheck-xhigh-20261113",
+ "units": "all",
+ "block_units": 3,
+ "parallel": 2,
+ "asks_at_once": 5,
+ "passes_first": 99,
+ "first_line": 0.99,
+ "third_line": 0.99,
+ "third_pass": "never",
+ "fail_streak_stop": 8,
+ "max_outage_hours": 6,
+ "health_config_set": "fsm",
+ "work_dir": "../../本机数据/再验少想/x"
+}

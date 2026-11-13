@@ -2,7 +2,7 @@
 
 Same model, same 78 questions, 39 versions of Claude Code. Does the version change how well Claude Opus 5.5 answers, or how much it thinks?
 
-**Status (13 November 2026):** the rule for reading the results was registered in [PREREGISTRATION.md](PREREGISTRATION.md) before the run. The registered run was sent on 11 and 12 November 2026 and is finished. The rule opened a third pass, so the main comparison has three. Its reports have not been opened yet. The change log at the end of that file lists every group and comparison added after the run began, with what had been seen each time, and the section [Added after the run began](#added-after-the-run-began) below gives them in one table. The results will go here, whatever they show.
+**Status (13 November 2026):** the rule for reading the results was registered in [PREREGISTRATION.md](PREREGISTRATION.md) before the run. The registered run was sent on 11 and 12 November 2026 and is finished. The rule opened a third pass, so the main comparison has three. Its reports were opened on 13 November 2026. After that, two groups were added on ten of the versions and on 2.1.323, and they are being sent (the last entry of the change log). The change log at the end of that file lists every group and comparison added after the run began, with what had been seen each time, and the section [Added after the run began](#added-after-the-run-began) below gives them in one table. The results will go here, whatever they show.
 
 ## Why
 
@@ -55,8 +55,9 @@ The registered run is the 39 versions and the small groups listed under "What ru
 | 13 Nov | [Release notes](release_notes/) of the 39 versions, listed for six topics | none | the same |
 | 13 Nov | [Code for the extra numbers](extra_numbers/), and the [count of declared differences after a third pass has opened](simulations/after_third_pass/) on made-up data | none | the same |
 | 13 Nov | [Code for the three small groups](small_group_comparisons/) (`nosent`, and the third pass of `flags_on` and of `author` on 2.1.280), with the readings it follows | none | the same |
+| 13 Nov, evening | [Two groups](recheck/) on 2.1.311 to 2.1.322 (ten versions) and on 2.1.323: the 78 questions at effort xhigh, and 24 of the questions at effort high in two stages | 4,290, and 3,168 with 3,168 more by a rule | the full results of the registered run |
 
-"A yes or no" is the one line the run logs after a pass: whether each of the two tests declared a difference. When each of these rows was added, no accuracy or thinking number of any group had been looked at, no segment or version had been named, and no scored answer had been read. The entries list what else had been seen, such as durations, costs and the token counts of requests.
+"A yes or no" is the one line the run logs after a pass: whether each of the two tests declared a difference. The last row is the exception to what follows: it was added after the reports were opened, and its entry says what had been seen. When each of the other rows was added, no accuracy or thinking number of any group had been looked at, no segment or version had been named, and no scored answer had been read. The entries list what else had been seen, such as durations, costs and the token counts of requests.
 
 ## Next to LiveNerf
 
@@ -100,6 +101,7 @@ desktop_prompt/            sha256 of the system prompt texts of the desktop-prom
 release_notes/             the changelog entries of the 39 versions on six topics, listed before the reports were opened
 extra_numbers/             code for the extra numbers of the 13 November entry, with tests on made-up data, committed before the reports were opened
 small_group_comparisons/   code for `nosent` and for the third pass of `flags_on` and `author` on 2.1.280, with tests on made-up data, committed before the reports were opened
+recheck/                   the two groups added after the reports were opened: group files, run settings, version list, question list, the script that sends the passes, the rule for stage 2
 ```
 
 The files in `ccversions/` and `inputs/` are copied byte for byte from the program that will run, so their sha256 match the lines in `RUNNER_SHA256.txt`. The tests are copied unchanged as well. `work_dir` in `formal_run.json` is a relative path, in Chinese, to a folder on the test machine outside this repo. It is left as it is so that the file's sha256 still matches.

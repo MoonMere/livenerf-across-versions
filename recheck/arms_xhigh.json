@@ -1,0 +1,30 @@
+{
+ "format": "ccversions-arms-spec-v1",
+ "name": "recheck-xhigh-20261113",
+ "note": "Added on 13 November 2026, after the reports were opened (PREREGISTRATION.md, change log). Group xhigh_recheck: the 78 questions at effort xhigh, five passes.",
+ "groups": [
+  {
+   "group": "xhigh_recheck",
+   "versions": [
+    "2.1.311",
+    "2.1.312",
+    "2.1.314",
+    "2.1.315",
+    "2.1.316",
+    "2.1.317",
+    "2.1.318",
+    "2.1.319",
+    "2.1.321",
+    "2.1.322",
+    "2.1.323"
+   ],
+   "mode": "stock_blocked",
+   "effort": "xhigh",
+   "remote_flags": "off",
+   "repeats": {
+    "first": 1
+   },
+   "note": "The ask of group main (the version's own system prompt and tool descriptions, every tool call refused before it runs, remote flags not fetched, each version in the config folder main used for it), on ten of the 39 versions and on 2.1.323."
+  }
+ ]
+}
