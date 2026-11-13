@@ -638,7 +638,7 @@ This replaces two sentences in the limits of the entry "a third pass for group `
 
 ### 13 November 2026, afternoon: `nosent` is sent another way, and the checks before its first scored ask
 
-Written on 13 November 2026 at about 13:45 in Melbourne (02:45 UTC). This entry was pushed before the first scored ask of group `nosent` and before the final report and the interim files were opened.
+Written on 13 November 2026 at about 13:40 in Melbourne (02:40 UTC). This entry was pushed before the first scored ask of group `nosent` and before the final report and the interim files were opened.
 
 **What had been seen by then.** Everything listed in the entries above, and also these. Of the third pass of `flags_on` and of `author` on 2.1.280: that all 390 asks came back done, and the fields that say how each was sent. Of the eight probes below: the command, the system prompt each one sent or stored, and the input token count of its first request. No answer has been read, the probes' answers included. No accuracy, thinking or output number of any group has been looked at, and the final report and the interim files have not been opened.
 
