@@ -53,3 +53,15 @@ Choices the rule left open, fixed here before any result:
 - If d minus e comes out clear, the arms differ in the whole system prompt. What this run can't tell apart is which part of the Desktop text did it, or its length. The test that would: start from the command line program's own prompt and add the Desktop sections one at a time, one arm each.
 
 The tests also need the script that sends this group, which is published with the results.
+
+## Group `api` on three passes (added 13 November 2026)
+
+`api_three_passes.py` gives the comparison of group `api` with group `author` on 2.1.322 once more, with the pass added on 13 November 2026 (change log entry "13 November 2026: a third pass for group `api`"). It was committed here while that pass was being sent and before the final report was opened.
+
+- It uses `analyze.paired`, the function the registered report uses for this line: item by item, each side averaged over its passes, `api` minus `author`, and a 95 per cent range from 10,000 redraws of the items.
+- It reports three figures: passes 1 and 2 (this must equal the figure of the registered report), pass 3 alone, and the three passes together. Each has accuracy counted both ways, thinking tokens and output tokens.
+- It attaches no wording. Section 9 has none for this line.
+- The records of the added pass are graded with `grade.py` unchanged.
+- It does not run until the registered run has graded all its passes and the added pass has 78 asks on each side.
+- `test_api_three_passes.py` has 8 tests on made-up data. They do not cover the grading step.
+
