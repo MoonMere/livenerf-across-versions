@@ -2,7 +2,7 @@
 
 Same model, same 78 questions, 39 versions of Claude Code. Does the version change how well Claude Opus 5.5 answers, or how much it thinks?
 
-**Status (13 November 2026):** the rule for reading the results was registered in [PREREGISTRATION.md](PREREGISTRATION.md) before the run. The registered run was sent on 11 and 12 November 2026 and is finished. Its reports have not been opened yet. The change log at the end of that file lists every group and comparison added after the run began, with what had been seen each time. The results will go here, whatever they show.
+**Status (13 November 2026):** the rule for reading the results was registered in [PREREGISTRATION.md](PREREGISTRATION.md) before the run. The registered run was sent on 11 and 12 November 2026 and is finished. The rule opened a third pass, so the main comparison has three. Its reports have not been opened yet. The change log at the end of that file lists every group and comparison added after the run began, with what had been seen each time, and the section [Added after the run began](#added-after-the-run-began) below gives them in one table. The results will go here, whatever they show.
 
 ## Why
 
@@ -36,6 +36,25 @@ What it can see, 8 times in 10, with two passes (a third pass sharpens this a li
 A drop that starts near the first or the last version needs to be larger. When all versions are truly the same, the whole procedure calls a difference less than 5% of the time for each of the two questions. A smaller change than the table shows will be reported as not seen at that size, with these numbers next to it.
 
 The full rule, with every number and where it comes from, is in [PREREGISTRATION.md](PREREGISTRATION.md).
+
+## Added after the run began
+
+The registered run is the 39 versions and the small groups listed under "What runs". The rows below came later. None of them enters the two registered tests or the decision about a third pass, and each is marked as added wherever it is reported. Every row has an entry in the change log of [PREREGISTRATION.md](PREREGISTRATION.md) that says why it was added and what had been seen by then. Where a row has scored asks, its entry was pushed before the first of them.
+
+| Added (Melbourne time) | What | Asks | Seen of the two tests by then |
+|---|---|---|---|
+| 12 Nov | Desktop group: 77 of the questions through the Claude Desktop app on 2.1.321, two rounds | 154 | nothing |
+| 12 Nov, evening | A third Desktop round | 77 | a yes or no for each test on two passes |
+| 12 Nov, evening | A comparison by time of day, on the asks of the main run | none | the same |
+| 12 Nov, night | Desktop-prompt group: five system prompts on 2.1.321, three rounds each | 1,170 | a yes or no for each test on two passes, then on three |
+| 12 Nov, night | Nine things that had been left unchecked | 19, unscored | the same |
+| 13 Nov | A third pass for `api` and for `author` on 2.1.322 | 156 | a yes or no for each test on three passes |
+| 13 Nov | Extra numbers and wordings for the report | none | the same |
+| 13 Nov | `nosent`: 2.1.280 and 2.1.322 without LiveNerf's two sentences, three passes | 468 | the same |
+| 13 Nov | A third pass for `flags_on` and for `author` on 2.1.280 | 390 | the same |
+| 13 Nov | [Release notes](release_notes/) of the 39 versions, listed for six topics | none | the same |
+
+"A yes or no" is the one line the run logs after a pass: whether each of the two tests declared a difference. When each of these rows was added, no accuracy or thinking number of any group had been looked at, no segment or version had been named, and no scored answer had been read. The entries list what else had been seen, such as durations, costs and the token counts of requests.
 
 ## Next to LiveNerf
 
@@ -74,6 +93,9 @@ inputs/formal_arms.json    the groups: versions, way of asking, passes
 inputs/formal_run.json     the run settings: seed, block size, asks at once, usage lines
 tests/                     tests of judge.py and analyze.py on made-up answers, and of the server tool rule
 simulations/               the simulations behind the numbers in PREREGISTRATION.md, with their outputs
+added_comparisons/         code for the comparisons added after the run began, with tests on made-up data
+desktop_prompt/            sha256 of the system prompt texts of the desktop-prompt group
+release_notes/             the changelog entries of the 39 versions on six topics, listed before the reports were opened
 ```
 
 The files in `ccversions/` and `inputs/` are copied byte for byte from the program that will run, so their sha256 match the lines in `RUNNER_SHA256.txt`. The tests are copied unchanged as well. `work_dir` in `formal_run.json` is a relative path, in Chinese, to a folder on the test machine outside this repo. It is left as it is so that the file's sha256 still matches.
