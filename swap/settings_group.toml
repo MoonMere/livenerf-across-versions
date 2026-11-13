@@ -8,8 +8,8 @@ parallel = 2
 sets = 3
 # The ways the scored passes ask. sw_n (the command with nothing added) is sent in the probes only.
 scored_groups = ["sw_o", "sw_w"]
-# How the two blocks are joined: join0, join1, join2 or marker. The first step of the probes decides it.
-structure = "join2"
+# How the two blocks are joined: join0, join1, join2 or marker. The first step of the probes decided it: join0.
+structure = "join0"
 # The questions: ../recheck/items_think_more_24.json
 item_list = "../recheck/items_think_more_24.json"
 # Passes in all, and the passes of stage 1.
