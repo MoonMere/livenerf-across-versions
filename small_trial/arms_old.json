@@ -1,0 +1,20 @@
+{
+ "format": "ccversions-arms-spec-v1",
+ "name": "small-trial-old-20261122",
+ "note": "Small trial of 22 November 2026, first segment: the 78 panel items, once each, on 2.1.316, before any new item is sent. It only checks that the asks of today come out like 2.1.316's asks of mid November (section 4 of the trial's rules).",
+ "groups": [
+  {
+   "group": "small_trial_old",
+   "versions": [
+    "2.1.316"
+   ],
+   "mode": "stock_blocked",
+   "effort": "high",
+   "remote_flags": "off",
+   "repeats": {
+    "first": 1
+   },
+   "note": "The ask of group main of the registered run on 2.1.316, unchanged: the version's own system prompt and tool descriptions, every tool call refused before it runs, effort high, remote flags not fetched, in the config folder group main used for this version (the main folder of 2.1.316)."
+  }
+ ]
+}

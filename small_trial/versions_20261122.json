@@ -1,0 +1,10 @@
+{
+ "name": "small-trial-20261122",
+ "frozen_on": "2026-11-22",
+ "note": "Small trial of 22 November 2026 (设计/小试_两百道新题_规矩_20261122.md). Every scored ask goes to 2.1.316. 2.1.322 is on the list only because the outage probe of ccversions/formal.py goes to 'latest' in config set fsm, which has folders for 2.1.280 and 2.1.322 only, as in the registered run and the recheck groups. The registered list is not edited: it is under the registered run's fingerprint.",
+ "latest": "2.1.322",
+ "versions": [
+  "2.1.316",
+  "2.1.322"
+ ]
+}

@@ -56,8 +56,9 @@ The registered run is the 39 versions and the small groups listed under "What ru
 | 13 Nov | [Code for the extra numbers](extra_numbers/), and the [count of declared differences after a third pass has opened](simulations/after_third_pass/) on made-up data | none | the same |
 | 13 Nov | [Code for the three small groups](small_group_comparisons/) (`nosent`, and the third pass of `flags_on` and of `author` on 2.1.280), with the readings it follows | none | the same |
 | 13 Nov, evening | [Two groups](recheck/) on 2.1.311 to 2.1.322 (ten versions) and on 2.1.323: the 78 questions at effort xhigh, and 24 of the questions at effort high in two stages | 4,290, and 3,168 with 3,168 more by a rule | the full results of the registered run |
+| 22 Nov | [A small trial](small_trial/) on 2.1.316 alone: 200 MMLU-Pro questions the panel never used, five passes, after one pass of the 78 questions | 1,078 and one unscored probe, at most 1,150 with asks sent again and outage probes | the full results of the registered run and of the groups added later |
 
-"A yes or no" is the one line the run logs after a pass: whether each of the two tests declared a difference. The last row is the exception to what follows: it was added after the reports were opened, and its entry says what had been seen. When each of the other rows was added, no accuracy or thinking number of any group had been looked at, no segment or version had been named, and no scored answer had been read. The entries list what else had been seen, such as durations, costs and the token counts of requests.
+"A yes or no" is the one line the run logs after a pass: whether each of the two tests declared a difference. The last two rows are the exception to what follows: they were added after the reports were opened, and their entries say what had been seen. The group of 14 November in the change log, also added after the reports were opened, is not in this table yet. When each of the other rows was added, no accuracy or thinking number of any group had been looked at, no segment or version had been named, and no scored answer had been read. The entries list what else had been seen, such as durations, costs and the token counts of requests.
 
 ## Next to LiveNerf
 
@@ -102,6 +103,7 @@ release_notes/             the changelog entries of the 39 versions on six topic
 extra_numbers/             code for the extra numbers of the 13 November entry, with tests on made-up data, committed before the reports were opened
 small_group_comparisons/   code for `nosent` and for the third pass of `flags_on` and `author` on 2.1.280, with tests on made-up data, committed before the reports were opened
 recheck/                   the two groups added after the reports were opened: group files, run settings, version list, question list, the script that sends the passes, the rule for stage 2
+small_trial/               the small trial of 22 November on 200 questions the panel never used: question ids, group files, run settings, version list, probe plan, the script that sends the passes, the programs for its numbers with tests on made-up rows
 ```
 
 The files in `ccversions/` and `inputs/` are copied byte for byte from the program that will run, so their sha256 match the lines in `RUNNER_SHA256.txt`. The tests are copied unchanged as well. `work_dir` in `formal_run.json` is a relative path, in Chinese, to a folder on the test machine outside this repo. It is left as it is so that the file's sha256 still matches.

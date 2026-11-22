@@ -1,0 +1,23 @@
+{
+ "format": "ccversions-probe-plan-spec-v1",
+ "name": "SP1",
+ "purpose": "Proposed probe before the first scored ask of the small trial of 22 November 2026 (设计/小试_两百道新题_规矩_20261122.md). Unscored, counted in the trial's cap of 1,150 asks. One ask: 2.1.316, the ask of group main (stock_blocked, effort high, remote flags off) with the author's probe sentence, into config set rp (the probe folders of the recheck groups, remote flags off), session file kept. It is the same row as ask 15 of probe plan RP1 of 13 November 2026, so its kept request can be set beside that one.",
+ "effort": "high",
+ "remote_flags": "off",
+ "parallel": 1,
+ "stop_at_weekly_utilization": 0.90,
+ "defaults": {
+  "config_set": "rp",
+  "keep_transcript": true
+ },
+ "blocks": [
+  [
+   {
+    "version": "2.1.316",
+    "mode": "stock_blocked",
+    "unit": "probe:author-ok",
+    "label": "main ask, high"
+   }
+  ]
+ ]
+}

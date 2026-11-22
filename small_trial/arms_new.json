@@ -1,0 +1,20 @@
+{
+ "format": "ccversions-arms-spec-v1",
+ "name": "small-trial-new-20261122",
+ "note": "Small trial of 22 November 2026, second segment: 200 MMLU-Pro items the panel does not use, five passes, on 2.1.316. These items never enter the registered comparison.",
+ "groups": [
+  {
+   "group": "small_trial_new",
+   "versions": [
+    "2.1.316"
+   ],
+   "mode": "stock_blocked",
+   "effort": "high",
+   "remote_flags": "off",
+   "repeats": {
+    "first": 1
+   },
+   "note": "The ask of group main of the registered run on 2.1.316, unchanged: the version's own system prompt and tool descriptions, every tool call refused before it runs, effort high, remote flags not fetched, in the config folder group main used for this version (the main folder of 2.1.316)."
+  }
+ ]
+}
